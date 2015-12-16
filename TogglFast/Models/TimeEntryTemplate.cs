@@ -13,6 +13,7 @@ namespace ToggleFast.Models
         public DateTime EndDate { get; set; }
         public DateTime StartTime { get; set; }
         public DateTime EndTime { get; set; }
+        public bool ExcludeWeekends { get; set; }
 
         public TimeEntryTemplate()
         {
@@ -47,10 +48,12 @@ namespace ToggleFast.Models
         {
             return 
                 Enumerable.Range(0, DaysEntries)
-                .Select(index =>
+                .Select(index => StartDate.Date.AddDays(index))
+                .Where(startDateTime => !ExcludeWeekends || (startDateTime.DayOfWeek != DayOfWeek.Saturday && startDateTime.DayOfWeek != DayOfWeek.Sunday))
+                .Select(startDateTime =>
                     new Toggl.TimeEntry()
                     {
-                        Start = (StartDate.Date.AddDays(index) + StartTime.TimeOfDay).ToString("yyyy-MM-ddTHH:mm:ss.fffffffzzz"),
+                        Start = (startDateTime + StartTime.TimeOfDay).ToString("yyyy-MM-ddTHH:mm:ss.fffffffzzz"),
                         Duration = (long)(EndTime - StartTime).TotalSeconds,
                         Description = this.Description,
                         IsBillable = true,
