@@ -18,6 +18,8 @@ namespace ToggleFast
             this.dtpStartTime.Value = this.template.StartTime;
             this.dtpEndTime.Value = this.template.EndTime;
 
+            this.template.ExcludeWeekends = true;
+
             this.txtApiToken.Text = Settings.Default.ApiToken;
         }
 
@@ -141,6 +143,11 @@ namespace ToggleFast
         {
             if (!String.IsNullOrEmpty(txtApiToken.Text))
                 Settings.Default.ApiToken = txtApiToken.Text;
+        }
+
+        private void chkExcludeWeekends_CheckedChanged(object sender, EventArgs e)
+        {
+            this.template.ExcludeWeekends = chkExcludeWeekends.Checked;
         }
     }
 }

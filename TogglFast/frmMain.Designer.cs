@@ -46,6 +46,7 @@
             this.txtDescription = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtApiToken = new System.Windows.Forms.TextBox();
+            this.chkExcludeWeekends = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // dtpStartDate
@@ -124,7 +125,7 @@
             // 
             this.lblEachDay.AutoSize = true;
             this.lblEachDay.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEachDay.Location = new System.Drawing.Point(12, 199);
+            this.lblEachDay.Location = new System.Drawing.Point(12, 215);
             this.lblEachDay.Name = "lblEachDay";
             this.lblEachDay.Size = new System.Drawing.Size(82, 13);
             this.lblEachDay.TabIndex = 12;
@@ -133,7 +134,7 @@
             // lblStartTime
             // 
             this.lblStartTime.AutoSize = true;
-            this.lblStartTime.Location = new System.Drawing.Point(12, 223);
+            this.lblStartTime.Location = new System.Drawing.Point(12, 239);
             this.lblStartTime.Name = "lblStartTime";
             this.lblStartTime.Size = new System.Drawing.Size(60, 13);
             this.lblStartTime.TabIndex = 13;
@@ -142,7 +143,7 @@
             // lblEndTime
             // 
             this.lblEndTime.AutoSize = true;
-            this.lblEndTime.Location = new System.Drawing.Point(12, 249);
+            this.lblEndTime.Location = new System.Drawing.Point(12, 265);
             this.lblEndTime.Name = "lblEndTime";
             this.lblEndTime.Size = new System.Drawing.Size(54, 13);
             this.lblEndTime.TabIndex = 15;
@@ -151,7 +152,7 @@
             // dtpStartTime
             // 
             this.dtpStartTime.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpStartTime.Location = new System.Drawing.Point(136, 217);
+            this.dtpStartTime.Location = new System.Drawing.Point(136, 233);
             this.dtpStartTime.Name = "dtpStartTime";
             this.dtpStartTime.Size = new System.Drawing.Size(130, 21);
             this.dtpStartTime.TabIndex = 14;
@@ -160,7 +161,7 @@
             // dtpEndTime
             // 
             this.dtpEndTime.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpEndTime.Location = new System.Drawing.Point(136, 243);
+            this.dtpEndTime.Location = new System.Drawing.Point(136, 259);
             this.dtpEndTime.Name = "dtpEndTime";
             this.dtpEndTime.Size = new System.Drawing.Size(130, 21);
             this.dtpEndTime.TabIndex = 16;
@@ -211,11 +212,25 @@
             this.txtApiToken.TextChanged += new System.EventHandler(this.txtApiToken_TextChanged);
             this.txtApiToken.Leave += new System.EventHandler(this.txtApiToken_Leave);
             // 
+            // chkExcludeWeekends
+            // 
+            this.chkExcludeWeekends.AutoSize = true;
+            this.chkExcludeWeekends.Checked = true;
+            this.chkExcludeWeekends.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkExcludeWeekends.Location = new System.Drawing.Point(136, 191);
+            this.chkExcludeWeekends.Name = "chkExcludeWeekends";
+            this.chkExcludeWeekends.Size = new System.Drawing.Size(114, 17);
+            this.chkExcludeWeekends.TabIndex = 19;
+            this.chkExcludeWeekends.Text = "Exclude weekends";
+            this.chkExcludeWeekends.UseVisualStyleBackColor = true;
+            this.chkExcludeWeekends.CheckedChanged += new System.EventHandler(this.chkExcludeWeekends_CheckedChanged);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(426, 378);
+            this.Controls.Add(this.chkExcludeWeekends);
             this.Controls.Add(this.txtApiToken);
             this.Controls.Add(this.txtDescription);
             this.Controls.Add(this.btnGenerateEntries);
@@ -264,6 +279,7 @@
         private System.Windows.Forms.TextBox txtDescription;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtApiToken;
+        private System.Windows.Forms.CheckBox chkExcludeWeekends;
     }
 }
 
