@@ -3,6 +3,7 @@ TogglFast
 
 Fast and easy entry of repetitive tasks into http://toggl.com.
 
+![screenshot](https://cloud.githubusercontent.com/assets/1448459/12741897/7e87b356-c9d0-11e5-885b-8d0e0b2804d9.png)
 
 API Token
 ---------
