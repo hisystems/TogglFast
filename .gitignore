@@ -1,1 +1,6 @@
 packages/*
+/TogglFast/obj
+/TogglFast/bin
+/.vs
+/UpgradeLog.htm
+/TogglFast.startup.suo

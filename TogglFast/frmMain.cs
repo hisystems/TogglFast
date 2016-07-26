@@ -84,9 +84,13 @@ namespace ToggleFast
                 {
                     var api = new Toggl.Toggl(txtApiToken.Text);
 
+                    cmbProject.Items.Clear();
+
                     cmbProject.Items.AddRange(api.Project.List().ToArray());
                     if (cmbProject.Items.Count > 0)
                         cmbProject.SelectedIndex = 0;
+
+                    cmbWorkspace.Items.Clear();
 
                     cmbWorkspace.Items.AddRange(api.Workspace.List().ToArray());
                     if (cmbWorkspace.Items.Count > 0)
